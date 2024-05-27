@@ -4,6 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fly</title>
+
+    <script>
+      function checkAndOpenLink() {
+        var userAgent = navigator.userAgent.toLowerCase();
+
+        const url = window.location.href;
+        if (url.includes("inviteGroupOrder?groupId")) {
+          const groupId = url.split("=")[1];
+          window.location.href = `exp+starbucksvndev://inviteGroupOrder?groupId=${groupId}`;
+        }
+
+        if (
+          userAgent.indexOf("iphone") !== -1 ||
+          userAgent.indexOf("ipad") !== -1 ||
+          userAgent.indexOf("ipod") !== -1 ||
+          userAgent.indexOf("android") !== -1
+        ) {
+          const url = window.location.href;
+          if (url.includes("inviteGroupOrder?groupId")) {
+            const groupId = url.split("=")[1];
+            window.location.href = `exp+starbucksvndev://inviteGroupOrder?groupId=${groupId}`;
+          }
+        }
+      }
+
+      window.onload = checkAndOpenLink;
+    </script>
   </head>
   <body>
     <div>Hello</div>
