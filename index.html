@@ -18,6 +18,13 @@
           if (url.includes("inviteGroupOrder?groupId")) {
             const groupId = url.split("=")[1];
             window.location.href = `exp+starbucksvndev://app/inviteGroupOrder?groupId=${groupId}`;
+            return;
+          }
+
+          if (url.includes("splitBill?groupId")) {
+            const groupId = url.split("=")[1];
+            window.location.href = `exp+starbucksvndev://app/splitBill?groupId=${groupId}`;
+            return;
           }
         }
       }
@@ -26,6 +33,6 @@
     </script>
   </head>
   <body>
-    <div>Hello</div>
+    <div>Hello World</div>
   </body>
 </html>
